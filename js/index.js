@@ -1,20 +1,78 @@
 
+//页面效果
+var PageAnimate = (function () {
+    //碎片跟随鼠标动
+    $('.logo618').each(function () {
+        $(this).data('left', parseInt($(this).css('left').match(/^-?\d*/)[0]));
+        $(this).data('top', parseInt($(this).css('top').match(/^-?\d*/)[0]));
+    });
+    document.onmousemove = function (event) {
+        var e = event || window.event;
+        var siteX = e.clientX;
+        var siteY = e.clientY;
+        $('.logo618').each(function () {
+            $(this).css("left", siteX / $(this).data("sum") + parseInt($(this).data('left')));
+            $(this).css("top", siteY / $(this).data("sum") + parseInt($(this).data('top')));
+        });
+    };
+})();
 
+// logo进场缩小
+setTimeout(function () {
+    $('.logo618').animate({
+        'top': '215px',
+        'width': '765px',
+        'opacity': '1'
+    }, 500)
+    $('.nav168').css('opacity', '1')
+}, 300)
 
+window.addEventListener("scroll", function () {
+    if (document.documentElement.scrollTop > 1000) {
+        $('.ce-618').fadeIn()
+    }else{
+        $('.ce-618').fadeOut()
+    }
 
+});
 
+// 四个牌子
+nav168($('.nav618-1'), '367px', '347px', '378px', '398px', 100)
+nav168($('.nav618-2'), '318px', '298px', '645px', '665px', 100)
+nav168($('.nav618-3'), '340px', '320px', '990px', '990px', 100)
+nav168($('.nav618-4'), '380px', '360px', '1265px', '1265px', 100)
 
-
-
-    $('.register-menu-btn').click(function(){
-        $('.register-dialog-box li').eq($(this).index()).addClass('w-block').siblings().removeClass('w-block')
+//四个牌子函数
+function nav168(e, width, widthed, left, lefted, speed) {
+    e.hover(function () {
+        $(this).find('img').eq(1).css('display', 'none')
+        $(this).find('img').eq(0).css('display', 'block')
+        $(this).stop().animate({
+            "width": width,
+            'left': left
+        }, speed)
+    }, function () {
+        $(this).find('img').eq(0).css('display', 'none')
+        $(this).find('img').eq(1).css('display', 'block')
+        $(this).stop().animate({
+            "width": widthed,
+            'left': lefted
+        }, speed)
     })
+}
 
+ 
+     
+    // 福利
+    $( '.register-menu-btn').click(function(){
+         $('.register-dialog-box li').eq($(this).index()).addClass('w-block').siblings().removeClass('w-block')
+    })
+// 关闭福利弹窗
     $('.register-close').click(function(){
         $('.register-dialog').fadeOut()
     })
-
-    $('.ce-menu a').click(function(){
+//右侧导航
+$('.ce-menu a').click(function(){
         $('.ce-menu a').removeClass('w-active')
         $(this).addClass('w-active')
     })
