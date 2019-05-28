@@ -20,7 +20,7 @@ var PageAnimate = (function () {
 // logo进场缩小
 setTimeout(function () {
     $('.logo618').animate({
-        'top': '215px',
+        'top': '200px',
         'width': '765px',
         'opacity': '1'
     }, 500)

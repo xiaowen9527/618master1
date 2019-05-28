@@ -30,7 +30,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .container {
@@ -135,7 +135,7 @@ section {
     /* height: 561px; */
     width: 1920px;
     position: absolute;
-    top: 215px;
+    top: 200px;
     left: 0;
     right: 0;
     opacity: 0;
@@ -164,7 +164,7 @@ section {
 
 .nav618-1 {
     left: 398px;
-    top: 665px;
+    top: 650px;
     z-index: 89;
 }
 
@@ -172,7 +172,7 @@ section {
     width: 298px;
     height: 285px;
     left: 665px;
-    top: 742px;
+    top: 727px;
     z-index: 90;
 }
 
@@ -180,7 +180,7 @@ section {
     width: 320px;
     height: 291px;
     left: 990px;
-    top: 720px;
+    top: 705px;
     z-index: 91;
 }
 
@@ -188,7 +188,7 @@ section {
     width: 360px;
     height: 286px;
     left: 1265px;
-    top: 676px;
+    top: 661px;
     z-index: 92;
 }
 
@@ -1512,7 +1512,7 @@ section {
     width: 200px;
     height: auto;
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     right: 60px;
     z-index: 10000000;
     display: none;
@@ -1548,6 +1548,7 @@ section {
 .ce-menu a.w-active {
     background: url(../img/ce3.png);
     background-size: 100% 100%;
+    color: #fdf08e;
 }
 
 .ce-menu hr {
@@ -1566,5 +1567,5 @@ section {
     width: 174px;
     height: 285px;
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
 }
